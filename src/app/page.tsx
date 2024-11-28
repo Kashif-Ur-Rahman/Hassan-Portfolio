@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
-import { Suspense } from "react";
-import { Canvas } from "@react-three/fiber";
-import { Environment, OrbitControls } from "@react-three/drei";
-import Earth from "../../public/Earth"
+// import { Suspense } from "react";
+// import { Canvas } from "@react-three/fiber";
+// import { Environment, OrbitControls } from "@react-three/drei";
+// import Earth from "../../public/Earth"
 
+// import { Canvas } from "@react-three/fiber";
+// import { Environment, OrbitControls } from "@react-three/drei";
+// import Earth from "../../public/Earth"
 export default function Home() {
   return (
     <>
