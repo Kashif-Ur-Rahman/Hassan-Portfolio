@@ -1,13 +1,20 @@
 "use client";
 
 import Link from "next/link";
+import { Suspense } from "react";
+import { Canvas } from "@react-three/fiber";
+import { Environment, OrbitControls } from "@react-three/drei";
+import Earth from "../../public/Earth"
+
 
 export default function Home() {
   return (
     <>
-      <div className="w-screen h-screen bg-black text-white flex flex-col md:flex-row relative">
+
+
+      <div className="w-screen h-screen text-white flex flex-col md:flex-row ">
         {/* Left Section....⬇️ */}
-        <div className="p-5 md:ml-20 md:mt-20 text-center md:text-left">
+        <div className=" p-5 md:ml-20 md:mt-20 text-center md:text-left">
           <h1 className="text-3xl md:text-5xl font-serif">Hassan Azhar</h1>
           <p className="mt-5 text-lg md:text-xl">
             . Software Engineer <span className="blink">|</span>
@@ -55,7 +62,17 @@ export default function Home() {
 
         {/* Vertical Line...⬇️ */}
         <div className="hidden md:block absolute left-5 top-0 h-full border-l border-white"></div>
+
+        <Canvas>
+          <ambientLight intensity={1.5} />
+          <OrbitControls enableZoom={false} />
+          <Suspense fallback={null}>
+            <Earth />
+          </Suspense>
+          <Environment preset="sunset" />
+        </Canvas>
       </div>
+
     </>
   );
 }
